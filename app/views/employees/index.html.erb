@@ -4,46 +4,46 @@
 
 <h1><%= Employee.model_name.human %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th><%= Employee.human_attribute_name(:name) %></th>
-      <th><%= Employee.human_attribute_name(:department) %></th>
-      <th><%= Employee.human_attribute_name(:years_worked) %>
-      <th><%= Employee.human_attribute_name(:gender) %></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @employees.each do |employee| %>
+<%= form_tag '#' do %>
+  <table>
+    <thead>
       <tr>
-        <td><%= employee.id %></td>
-        <td><%= employee.name %></td>
-        <td><%= employee.department %></td>
-        <td><%= employee.years_worked %></td>
-        <td><%= employee.gender %></td>
-        <td>
-          <%= link_to t('action.show', default: 'Show'), employee %>
-          <%= link_to t('action.edit', default: 'Edit'), edit_employee_path(employee) %>
-        </td>
+        <th></th>
+        <th>ID</th>
+        <th><%= Employee.human_attribute_name(:name) %></th>
+        <th><%= Employee.human_attribute_name(:department) %></th>
+        <th><%= Employee.human_attribute_name(:years_worked) %>
+        <th><%= Employee.human_attribute_name(:gender) %></th>
       </tr>
-    <% end %>
-  </tbody>
+    </thead>
 
-  <tfoot>
-    <tr>
-      <th>ID</th>
-      <th><%= Employee.human_attribute_name(:name) %></th>
-      <th><%= Employee.human_attribute_name(:department) %></th>
-      <th><%= Employee.human_attribute_name(:years_worked) %>
-      <th><%= Employee.human_attribute_name(:gender) %></th>
-      <th></th>
-    </tr>
-  </tfoot>
-</table>
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr>
+          <td><%= radio_button_tag(:id, employee.id) %></td>
+          <td><%= employee.id %></td>
+          <td><%= employee.name %></td>
+          <td><%= employee.department %></td>
+          <td><%= employee.years_worked %></td>
+          <td><%= employee.gender %></td>
+        </tr>
+      <% end %>
+    </tbody>
 
-<br>
+    <tfoot>
+      <tr>
+        <th></th>
+        <th>ID</th>
+        <th><%= Employee.human_attribute_name(:name) %></th>
+        <th><%= Employee.human_attribute_name(:department) %></th>
+        <th><%= Employee.human_attribute_name(:years_worked) %>
+        <th><%= Employee.human_attribute_name(:gender) %></th>
+      </tr>
+    </tfoot>
+  </table>
 
-<%= link_to t('.action.new_employee', default: 'New Employee'), new_employee_path %>
+  <br>
+
+  <%= link_to t('.action.new_employee', default: 'New Employee'), new_employee_path, class: 'btn btn-light' %>
+  <%= submit_tag(t('.action.edit_employee', default: 'Edit Employee'), disabled: true, class: 'btn btn-light', on_click: "move_edit_employee_page()") %>
+<% end %>

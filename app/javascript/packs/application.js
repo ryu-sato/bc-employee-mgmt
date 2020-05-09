@@ -24,3 +24,7 @@ require('datatables.net-dt/css/jquery.dataTables');
 $(document).ready( function () {
   $("table[class*='datatable']").DataTable();
 });
+
+// bootstrap
+require('bootstrap');
+require('bootstrap/scss/bootstrap');
