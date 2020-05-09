@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.select :gender, Employee.genders.to_a, include_blank: true %>
+    <%= form.select :gender, Employee.genders.keys.to_a, include_blank: true %>
   </div>
 
   <div class="field">

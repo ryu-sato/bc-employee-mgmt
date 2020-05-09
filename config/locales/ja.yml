@@ -1,0 +1,22 @@
+ja:
+  date:
+    order:
+      - :year
+      - :month
+      - :day
+  activerecord:
+    models:
+      employee: 従業員
+    attributes:
+      employee:
+        name: 名前
+        department: 部署
+        gender: 性別
+        birth: 誕生日
+        years_worked: 勤務年数
+        joined_date: 勤務開始日
+        payment: 給料
+        note: 備考
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日
