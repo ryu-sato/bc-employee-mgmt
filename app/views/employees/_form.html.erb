@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.select :gender, Employee.genders.keys.to_a, include_blank: true %>
+    <%= form.select :gender, Employee.genders.keys.map {|k| [Employee.genders_i18n[k], k] }, include_blank: true %>
   </div>
 
   <div class="field">
