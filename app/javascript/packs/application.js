@@ -18,8 +18,9 @@ require("channels")
 
 
 // initialize datatables
-var $ = require('jquery')
-require('datatables.net')
+var $ = require('jquery');
+require('datatables.net');
+require('datatables.net-dt/css/jquery.dataTables');
 $(document).ready( function () {
   $("table[class*='datatable']").DataTable();
 });
