@@ -2,7 +2,7 @@
 
 <h1><%= Employee.model_name.human %></h1>
 
-<table>
+<table class="datatable">
   <thead>
     <tr>
       <th>ID</th>
@@ -10,7 +10,7 @@
       <th><%= Employee.human_attribute_name(:department) %></th>
       <th><%= Employee.human_attribute_name(:years_worked) %>
       <th><%= Employee.human_attribute_name(:gender) %></th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -22,9 +22,11 @@
         <td><%= employee.department %></td>
         <td><%= employee.years_worked %></td>
         <td><%= employee.gender %></td>
-        <td><%= link_to t('action.show', default: 'Show'), employee %></td>
-        <td><%= link_to t('action.edit', default: 'Edit'), edit_employee_path(employee) %></td>
-        <td><%= link_to t('action.destroy', default: 'Destroy'), employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to t('action.show', default: 'Show'), employee %>
+          <%= link_to t('action.edit', default: 'Edit'), edit_employee_path(employee) %>
+          <%= link_to t('action.destroy', default: 'Destroy'), employee, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

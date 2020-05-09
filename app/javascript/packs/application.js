@@ -15,3 +15,11 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+// initialize datatables
+var $ = require('jquery')
+require('datatables.net')
+$(document).ready( function () {
+  $("table[class*='datatable']").DataTable();
+});
