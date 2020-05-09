@@ -23,7 +23,7 @@ ja:
         name: 名前
         department: 部署
         gender: 性別
-        birth: 誕生日
+        birth: 生年月日
         years_worked: 勤務年数
         joined_date: 勤務開始日
         payment: 給料

@@ -21,7 +21,7 @@
       <% @employees.each do |employee| %>
         <tr>
           <td><%= radio_button_tag(:id, employee.id) %></td>
-          <td><%= employee.id %></td>
+          <td><%= link_to employee.id, employee_path(employee.id) %></td>
           <td><%= employee.name %></td>
           <td><%= employee.department %></td>
           <td><%= employee.years_worked %></td>
