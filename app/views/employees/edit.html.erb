@@ -1,6 +1,6 @@
-<h1>Editing Employee</h1>
+<h1><%= t('.action.edit_employee', default: 'Editing Employee') %></h1>
 
 <%= render 'form', employee: @employee %>
 
-<%= link_to 'Show', @employee %> |
-<%= link_to 'Back', employees_path %>
+<%= link_to t('action.show', default: 'Show'), @employee %> |
+<%= link_to t('action.back', default: 'Back'), employees_path %>

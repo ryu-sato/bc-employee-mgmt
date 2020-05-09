@@ -1,39 +1,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= Employee.human_attribute_name(:name) %>:</strong>
   <%= @employee.name %>
 </p>
 
 <p>
-  <strong>Department:</strong>
+  <strong><%= Employee.human_attribute_name(:department) %>:</strong>
   <%= @employee.department %>
 </p>
 
 <p>
-  <strong>Gender:</strong>
+  <strong><%= Employee.human_attribute_name(:gender) %>:</strong>
   <%= @employee.gender %>
 </p>
 
 <p>
-  <strong>Birth:</strong>
+  <strong><%= Employee.human_attribute_name(:birth) %>:</strong>
   <%= @employee.birth %>
 </p>
 
 <p>
-  <strong>Joined date:</strong>
+  <strong><%= Employee.human_attribute_name(:years_worked) %>:</strong>
+  <%= @employee.years_worked %>
+</p>
+
+<p>
+  <strong><%= Employee.human_attribute_name(:joined_date) %>:</strong>
   <%= @employee.joined_date %>
 </p>
 
 <p>
-  <strong>Payment:</strong>
+  <strong><%= Employee.human_attribute_name(:payment) %>:</strong>
   <%= @employee.payment %>
 </p>
 
 <p>
-  <strong>Note:</strong>
+  <strong><%= Employee.human_attribute_name(:note) %>:</strong>
   <%= @employee.note %>
 </p>
 
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+<%= link_to t('action.edit', default: 'Edit'), edit_employee_path(@employee) %> |
+<%= link_to t('action.back', default: 'Back'), employees_path %>

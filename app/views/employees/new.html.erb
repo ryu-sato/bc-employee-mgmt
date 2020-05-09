@@ -1,5 +1,5 @@
-<h1>New Employee</h1>
+<h1><%= t('.action.new_employee', default: 'New Employee') %></h1>
 
 <%= render 'form', employee: @employee %>
 
-<%= link_to 'Back', employees_path %>
+<%= link_to t('action.back', default: 'Back'), employees_path %>
