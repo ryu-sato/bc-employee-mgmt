@@ -30,4 +30,9 @@ require('bootstrap');
 require('bootstrap/scss/bootstrap');
 // styling datatable by bs4
 require('datatables.net-bs4');
+
+// 各ページ用のjsを読み込む
+require('../src/employees/index');
+
+// stylesを読み込む
 require('../stylesheets/bc_employee_mgmt.scss');
