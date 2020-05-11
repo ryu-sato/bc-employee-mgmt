@@ -2,7 +2,8 @@ var $ = require('jquery');
 require('datatables.net');
 require('datatables.net-dt/css/jquery.dataTables');
 
-$(document).ready(function() {
+// turbolink を使う場合、jQuery の ready は正常に動作しない
+$(document).on('turbolinks:load', function() {
     let form = document.getElementById('employee-index');
     if (form === null) {
         return;
