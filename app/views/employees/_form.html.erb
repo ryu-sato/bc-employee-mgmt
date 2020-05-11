@@ -28,12 +28,14 @@
 
   <div class="field">
     <%= form.label :birth %>
-    <%= form.date_select :birth %>
+    <%# locale を ja にした場合、date_select における月がアルファベット1文字になってしまうため、数字で表示する %>
+    <%= form.date_select :birth, use_month_numbers: true, start_year: Date.today.year - 150, default: Date.new(Date.today.year - 22, 1, 1) %>
   </div>
 
   <div class="field">
     <%= form.label :joined_date %>
-    <%= form.date_select :joined_date %>
+    <%# locale を ja にした場合、date_select における月がアルファベット1文字になってしまうため、数字で表示する %>
+    <%= form.date_select :joined_date, use_month_numbers: true, start_year: Date.today.year - 150 %>
   </div>
 
   <div class="field">
