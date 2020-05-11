@@ -28,3 +28,6 @@ $(document).ready( function () {
 // bootstrap
 require('bootstrap');
 require('bootstrap/scss/bootstrap');
+// styling datatable by bs4
+require('datatables.net-bs4');
+require('../stylesheets/bc_employee_mgmt.scss');

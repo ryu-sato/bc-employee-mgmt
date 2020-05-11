@@ -1,7 +1,7 @@
 <%= form_with(model: employee, local: true) do |form| %>
   <% if employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+    <div class="alert alert-warning" role="alert">
+      <h4><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h4>
 
       <ul>
         <% employee.errors.full_messages.each do |message| %>
@@ -11,44 +11,70 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group row">
+    <div class="col-sm-2 ">
+      <%= form.label :name, class: "col-form-label" %>
+    </div>
+    <div class="col-sm-10">
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :department %>
-    <%= form.text_field :department %>
+  <div class="form-group row">
+    <div class="col-sm-2 ">
+      <%= form.label :department, class: "col-form-label" %>
+    </div>
+    <div class="col-sm-10">
+      <%= form.text_field :department, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.select :gender, Employee.genders.keys.map {|k| [Employee.genders_i18n[k], k] }, include_blank: true %>
+  <div class="form-group row">
+    <div class="col-sm-2 ">
+      <%= form.label :gender, class: "col-form-label" %>
+    </div>
+    <div class="col-sm-10">
+      <%= form.select :gender, Employee.genders.keys.map {|k| [Employee.genders_i18n[k], k] }, { include_blank: true }, { class: "form-control" } %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :birth %>
+  <div class="form-group row">
+    <div class="col-sm-2 ">
+      <%= form.label :birth, class: "col-form-label" %>
+    </div>
     <%# locale を ja にした場合、date_select における月がアルファベット1文字になってしまうため、数字で表示する %>
-    <%= form.date_select :birth, use_month_numbers: true, start_year: Date.today.year - 150, default: Date.new(Date.today.year - 22, 1, 1) %>
+    <div class="col-sm-10 form-inline">
+      <%= form.date_select :birth, { use_month_numbers: true, start_year: Date.today.year - 150, default: Date.new(Date.today.year - 22, 1, 1) }, { class: "form-control" } %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :joined_date %>
+  <div class="form-group row">
+    <div class="col-sm-2 ">
+      <%= form.label :joined_date, class: "col-form-label" %>
+    </div>
     <%# locale を ja にした場合、date_select における月がアルファベット1文字になってしまうため、数字で表示する %>
-    <%= form.date_select :joined_date, use_month_numbers: true, start_year: Date.today.year - 150 %>
+    <div class="col-sm-10 form-inline">
+      <%= form.date_select :joined_date, { use_month_numbers: true, start_year: Date.today.year - 150 }, { class: "form-control" } %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :payment %>
-    <%= form.text_field :payment %>
+  <div class="form-group row">
+    <div class="col-sm-2 ">
+      <%= form.label :payment, class: "col-form-label" %>
+    </div>
+    <div class="col-sm-10">
+      <%= form.text_field :payment, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :note %>
-    <%= form.text_area :note %>
+  <div class="form-group row">
+    <div class="col-sm-2 ">
+      <%= form.label :note, class: "col-form-label" %>
+    </div>
+    <div class="col-sm-10">
+      <%= form.text_area :note, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit class: "btn btn-primary" %>
 <% end %>

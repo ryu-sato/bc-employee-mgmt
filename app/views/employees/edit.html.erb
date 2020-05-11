@@ -2,5 +2,5 @@
 
 <%= render 'form', employee: @employee %>
 
-<%= link_to t('action.show', default: 'Show'), @employee %> |
-<%= link_to t('action.back', default: 'Back'), employees_path %>
+<%= link_to t('action.show', default: 'Show'), @employee, class: 'btn btn-link' %> |
+<%= link_to t('action.back', default: 'Back'), employees_path, class: 'btn btn-link' %>

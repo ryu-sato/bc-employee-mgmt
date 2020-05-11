@@ -1,39 +1,45 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @employee.name %></h1>
 
-<p>
-  <strong><%= Employee.human_attribute_name(:name) %>:</strong>
-  <%= @employee.name %>
-</p>
+<% if notice.present? %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
 
-<p>
-  <strong><%= Employee.human_attribute_name(:department) %>:</strong>
-  <%= @employee.department %>
-</p>
+<div class="ml-3">
+  <div class="row">
+    <div class="col-2"><label><%= Employee.human_attribute_name(:name) %></label></div>
+    <div class="col-3"><%= @employee.name %></div>
+  </div>
 
-<p>
-  <strong><%= Employee.human_attribute_name(:gender) %>:</strong>
-  <%= @employee.gender %>
-</p>
+  <div class="row">
+    <div class="col-2"><label><%= Employee.human_attribute_name(:department) %></label></div>
+    <div class="col-3"><%= @employee.department %></div>
+  </div>
 
-<p>
-  <strong><%= Employee.human_attribute_name(:birth) %>:</strong>
-  <%= @employee.birth %>
-</p>
+  <div class="row">
+    <div class="col-2"><label><%= Employee.human_attribute_name(:gender) %></label></div>
+    <div class="col-3"><%= @employee.gender %></div>
+  </div>
 
-<p>
-  <strong><%= Employee.human_attribute_name(:years_worked) %>:</strong>
-  <%= @employee.years_worked %>
-</p>
+  <div class="row">
+    <div class="col-2"><label><%= Employee.human_attribute_name(:birth) %></label></div>
+    <div class="col-3"><%= @employee.birth %></div>
+  </div>
 
-<p>
-  <strong><%= Employee.human_attribute_name(:payment) %>:</strong>
-  <%= @employee.payment %>
-</p>
+  <div class="row">
+    <div class="col-2"><label><%= Employee.human_attribute_name(:years_worked) %></label></div>
+    <div class="col-3"><%= @employee.years_worked %></div>
+  </div>
 
-<p>
-  <strong><%= Employee.human_attribute_name(:note) %>:</strong>
-  <%= @employee.note %>
-</p>
+  <div class="row">
+    <div class="col-2"><label><%= Employee.human_attribute_name(:payment) %></label></div>
+    <div class="col-3"><%= @employee.payment %></div>
+  </div>
 
-<%= link_to t('action.edit', default: 'Edit'), edit_employee_path(@employee) %> |
-<%= link_to t('action.back', default: 'Back'), employees_path %>
+  <div class="row">
+    <div class="col-2"><label><%= Employee.human_attribute_name(:note) %></label></div>
+    <div class="col-3"><%= @employee.note %></div>
+  </div>
+</div>
+
+<%= link_to t('action.edit', default: 'Edit'), edit_employee_path(@employee), class: 'btn btn-link' %> |
+<%= link_to t('action.back', default: 'Back'), employees_path, class: 'btn btn-link' %>
