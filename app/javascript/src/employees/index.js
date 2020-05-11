@@ -3,6 +3,11 @@ require('datatables.net');
 require('datatables.net-dt/css/jquery.dataTables');
 
 $(document).ready(function() {
+    let form = document.getElementById('employee-index');
+    if (form === null) {
+        return;
+    }
+
     function onSubmitForm(event) {
         event.preventDefault();
         event.stopPropagation();
