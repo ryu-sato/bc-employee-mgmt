@@ -42,6 +42,8 @@ group :development, :test do
   gem 'pry'
   # Fast debugging with Pry. (https://github.com/deivid-rodriguez/pry-byebug)
   gem 'pry-byebug'
+  # Use Pry as your rails console (https://github.com/rweng/pry-rails)
+  gem 'pry-rails'
   # RSpec for Rails (https://github.com/rspec/rspec-rails)
   gem 'rspec-rails'
 end
