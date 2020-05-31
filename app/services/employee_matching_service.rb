@@ -51,7 +51,7 @@ class EmployeeMatchingService
 
         replace_table = [
             # 無声音は削除する
-            { regex: /[ッンー]/, rep: '' },
+            { regex: /[ッンー\s]/, rep: '' },
             # 濁点・半濁点を削除する
             { regex: /[ガ]/, rep: 'カ'}, { regex: /[ザ]/, rep: 'サ'}, { regex: /[ダ]/, rep: 'タ'}, { regex: /[バ]/, rep: 'パ'},
             { regex: /[ギ]/, rep: 'キ'}, { regex: /[ジ]/, rep: 'シ'}, { regex: /[ヂ]/, rep: 'チ'}, { regex: /[ビ]/, rep: 'ヒ'},
@@ -75,7 +75,7 @@ class EmployeeMatchingService
         sentences = @tokenizer.tokenize(string)
         sentences.extend JavaIterator
         sentences.each do |s|
-            readings += s.reading
+            readings += s.reading if s.reading.present?
         end
         replace_table.each do |it|
             readings.gsub!(it[:regex], it[:rep])
