@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "rebornix.ruby",
+    "castwide.solargraph",
+    "coenraads.bracket-pair-colorizer",
+    "wayou.vscode-todo-highlight",
+    "vscode-icons-team.vscode-icons",
+    "peterjausovec.vscode-docker",
+    "editorconfig.editorconfig"
+  ]
+}
