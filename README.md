@@ -1,24 +1,5 @@
-# README
+# How to install
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+JAVA をインストールし、JAVA_HOME 環境変数を設定する
+依存関係の解決
+    `bundle install --path vendor/bundle --binstubs=.bundle/bin`
