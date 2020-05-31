@@ -42,6 +42,8 @@ group :development, :test do
   gem 'pry'
   # Fast debugging with Pry. (https://github.com/deivid-rodriguez/pry-byebug)
   gem 'pry-byebug'
+  # RSpec for Rails (https://github.com/rspec/rspec-rails)
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -57,6 +59,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Add comments to your Gemfile with each dependency's description. (https://github.com/ivantsepp/annotate_gem)
   gem 'annotate_gem'
+  # Annotates Rails Models, routes, fixtures, and others based on the database schema. (http://github.com/ctran/annotate_models)
+  gem 'annotate'
+  # A Ruby language server (http://solargraph.org)
+  gem 'solargraph'
 end
 
 group :test do
