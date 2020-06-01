@@ -3,27 +3,31 @@
 <h1><%= Employee.model_name.human %></h1>
 
 <%= form_tag '#', id: 'employee-index' do %>
-  <table>
+  <table class="table-responsive">
     <thead>
       <tr>
-        <th></th>
+        <th>A</th>
+        <th>B</th>
         <th>ID</th>
         <th><%= Employee.human_attribute_name(:name) %></th>
         <th><%= Employee.human_attribute_name(:department) %></th>
         <th><%= Employee.human_attribute_name(:years_worked) %>
         <th><%= Employee.human_attribute_name(:gender) %></th>
+        <th><%= t('.action.actions', default: 'Actions') %></th>
       </tr>
     </thead>
 
     <tbody>
       <% @employees.each do |employee| %>
         <tr>
-          <td><%= radio_button_tag(:id, employee.id) %></td>
+          <td><%= radio_button_tag(:id_a, employee.id) %></td>
+          <td><%= radio_button_tag(:id_b, employee.id) %></td>
           <td><%= link_to employee.id, employee_path(employee.id) %></td>
           <td><%= employee.name %></td>
           <td><%= employee.department %></td>
           <td><%= employee.years_worked %></td>
           <td><%= employee.gender %></td>
+          <td><%= link_to t('.action.edit_employee', default: 'Edit Employee'), edit_employee_path(employee), class: 'btn btn-light' %></td>
         </tr>
       <% end %>
     </tbody>
@@ -31,11 +35,13 @@
     <tfoot>
       <tr>
         <th></th>
+        <th></th>
         <th>ID</th>
         <th><%= Employee.human_attribute_name(:name) %></th>
         <th><%= Employee.human_attribute_name(:department) %></th>
         <th><%= Employee.human_attribute_name(:years_worked) %>
         <th><%= Employee.human_attribute_name(:gender) %></th>
+        <th><%= t('.action.actions', default: 'Actions') %></th>
       </tr>
     </tfoot>
   </table>

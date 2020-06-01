@@ -1,0 +1,16 @@
+<h1>Matching</h1>
+
+<% if notice.present? %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+
+<img src="<%= asset_pack_path('img/bootstrap.svg') %>" alt="" width="32" height="32" title="Bootstrap">
+<div>
+  相性: <%= @compatibility %>
+</div>
+
+<div>
+  <%= @employee_a.name %>
+  &times;
+  <%= @employee_b.name %>
+</div>
