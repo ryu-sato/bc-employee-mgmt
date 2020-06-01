@@ -65,7 +65,11 @@ class EmployeesController < ApplicationController
     id_a, id_b = params.require([:id_a, :id_b])
     @employee_a = Employee.find(id_a)
     @employee_b = Employee.find(id_b)
-    @compatibility = EmployeeMatchingService.instance.compatibility(@employee_a, @employee_b)
+    begin
+      @compatibility = EmployeeMatchingService.instance.compatibility(@employee_a, @employee_b)
+    rescue RuntimeError => e
+      @error = e
+    end
   end
 
   private
