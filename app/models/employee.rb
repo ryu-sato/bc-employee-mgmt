@@ -4,6 +4,7 @@ class Employee < ApplicationRecord
   validates :name, presence: true
   validates :department, presence: true
   validates :payment, presence: true
+  validates :gender, presence: true
 
   def years_worked
     today = Date.today()

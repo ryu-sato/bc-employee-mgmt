@@ -61,6 +61,17 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def matching
+    id_a, id_b = params.require([:id_a, :id_b])
+    @employee_a = Employee.find(id_a)
+    @employee_b = Employee.find(id_b)
+    begin
+      @compatibility = EmployeeMatchingService.instance.compatibility(@employee_a, @employee_b)
+    rescue RuntimeError => e
+      @error = e
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_employee

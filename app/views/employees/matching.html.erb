@@ -1,0 +1,15 @@
+<h1>Matching</h1>
+
+<% if @error.present? %>
+  <p class="alert alert-warning"><%= @error %></p>
+<% else %>
+  <div>
+    相性: <%= @compatibility %>
+  </div>
+
+  <div>
+    <%= @employee_a.name %>
+    &times;
+    <%= @employee_b.name %>
+  </div>
+<% end %>

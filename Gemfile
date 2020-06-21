@@ -46,6 +46,10 @@ group :development, :test do
   gem 'pry-rails'
   # RSpec for Rails (https://github.com/rspec/rspec-rails)
   gem 'rspec-rails'
+  # factory_bot_rails provides integration between factory_bot and rails 4.2 or newer (https://github.com/thoughtbot/factory_bot_rails)
+  gem "factory_bot_rails"
+  # A Ruby language server (http://solargraph.org)
+  gem "solargraph"
 end
 
 group :development do

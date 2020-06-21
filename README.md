@@ -1,24 +1,9 @@
-# README
+# How to install
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+JAVA 8 ([JAVA 11 だと jrb が動作しない](https://github.com/arton/rjb/issues/70)) をインストールし、JAVA_HOME 環境変数を設定する
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 依存関係を解決する
+    `bundle install --path vendor/bundle --binstubs=.bundle/bin`
+* kuromoji をダウンロードしてパスを設定する
+    * [GitHub](https://github.com/atilika/kuromoji/downloads) から kuromoji をダウンロードする
+    * config/settings/#{Rails.env}.yml の KUROMOJI_LIB に kuromoji へのパスを指定する

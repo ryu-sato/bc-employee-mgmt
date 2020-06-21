@@ -37,6 +37,7 @@ ja:
     action: &employee_action
       new_employee: 従業員を追加
       edit_employee: 従業員を編集
+      match_employee: 従業員をマッチング
     index:
       action:
         <<: *employee_action
