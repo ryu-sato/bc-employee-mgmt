@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', function () {
   }
 
   // 従業員の編集ボタンは対象が選択されているときだけ押せるよう有効・無効を切り替える
-  function enable_edit_employee_button() {
+  function enable_matching_employee_button() {
     let checkedIdA = $("input[name='id_a']:checked");
     let checkedIdB = $("input[name='id_b']:checked");
     if (checkedIdA.length === 1 && checkedIdB.length === 1) {
@@ -59,8 +59,8 @@ $(document).on('turbolinks:load', function () {
   });
 
   $("input[name*='id_']").change(function () {
-    enable_edit_employee_button();
+    enable_matching_employee_button();
   });
 
-  enable_edit_employee_button();
+  enable_matching_employee_button();
 });
