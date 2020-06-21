@@ -63,6 +63,8 @@ class EmployeeMatchingService
       { regex: /[プ]/, rep: 'フ'},
       { regex: /[ペ]/, rep: 'ヘ'},
       { regex: /[ポ]/, rep: 'ホ'},
+      # 小さいカナを大きいカナにする
+      { regex: /[ユ]/, rep: 'ュ'}, { regex: /[ヨ]/, rep: 'ョ'},
       # 母音を数値へ変換する
       { regex: /[アカサタナハマヤラワ]/, rep: '1' },
       { regex: /[イキシチニヒミリ]/,     rep: '2' },
@@ -83,7 +85,7 @@ class EmployeeMatchingService
 
     if readings.match?(/[^1-9]/)
       Rails.logger.warn("vowels error: non-numeric char contains. these characters will be ignored.")
-      readings.reject! {|r| r =~ /[^1-5]/}
+      readings.delete!("^1-5")
     end
 
     readings
