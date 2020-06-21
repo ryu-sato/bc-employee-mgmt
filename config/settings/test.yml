@@ -1,1 +1,1 @@
-KUROMOJI_LIB: /home/vagrant/kuromoji-0.7.7/lib/kuromoji-0.7.7.jar
+KUROMOJI_LIB: <%= ENV['KUROMOJI_LIB'] || '/home/vagrant/kuromoji-0.7.7/lib/kuromoji-0.7.7.jar' %>
